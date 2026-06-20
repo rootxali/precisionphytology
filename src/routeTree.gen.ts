@@ -10,20 +10,45 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ResearchRouteImport } from './routes/research'
+import { Route as PublicNoticeRouteImport } from './routes/public-notice'
+import { Route as MediaRouteImport } from './routes/media'
+import { Route as InformationRouteImport } from './routes/information'
+import { Route as EstablishmentsRouteImport } from './routes/establishments'
+import { Route as EmployeesRouteImport } from './routes/employees'
 import { Route as ContactRouteImport } from './routes/contact'
-import { Route as AppointmentRouteImport } from './routes/appointment'
+import { Route as CareersRouteImport } from './routes/careers'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ResearchSocialSciencesRouteImport } from './routes/research/social-sciences'
+import { Route as ResearchPlantSciencesRouteImport } from './routes/research/plant-sciences'
+import { Route as ResearchNaturalResourcesRouteImport } from './routes/research/natural-resources'
+import { Route as ResearchEngineeringRouteImport } from './routes/research/engineering'
+import { Route as ResearchCoordinationRouteImport } from './routes/research/coordination'
+import { Route as ResearchAnimalSciencesRouteImport } from './routes/research/animal-sciences'
+import { Route as PublicNoticeTendersRouteImport } from './routes/public-notice/tenders'
+import { Route as PublicNoticeNotificationsRouteImport } from './routes/public-notice/notifications'
+import { Route as PublicNoticeCircularsRouteImport } from './routes/public-notice/circulars'
+import { Route as MediaPressReleasesRouteImport } from './routes/media/press-releases'
+import { Route as MediaNewsRouteImport } from './routes/media/news'
+import { Route as MediaGalleryRouteImport } from './routes/media/gallery'
+import { Route as EstablishmentsSarcRouteImport } from './routes/establishments/sarc'
+import { Route as EstablishmentsNscriRouteImport } from './routes/establishments/nscri'
+import { Route as EstablishmentsNarcRouteImport } from './routes/establishments/narc'
+import { Route as EstablishmentsBardcRouteImport } from './routes/establishments/bardc'
+import { Route as EstablishmentsAzriBwpRouteImport } from './routes/establishments/azri-bwp'
+import { Route as EmployeesWebmailRouteImport } from './routes/employees/webmail'
+import { Route as EmployeesPayslipsRouteImport } from './routes/employees/payslips'
+import { Route as EmployeesLeaveRouteImport } from './routes/employees/leave'
+import { Route as CareersApplyRouteImport } from './routes/careers/apply'
+import { Route as AboutVisionRouteImport } from './routes/about/vision'
+import { Route as AboutOrganogramRouteImport } from './routes/about/organogram'
+import { Route as AboutChairmanRouteImport } from './routes/about/chairman'
+import { Route as AboutBogRouteImport } from './routes/about/bog'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ServicesRoute = ServicesRouteImport.update({
-  id: '/services',
-  path: '/services',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ResearchRoute = ResearchRouteImport.update({
@@ -31,14 +56,44 @@ const ResearchRoute = ResearchRouteImport.update({
   path: '/research',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PublicNoticeRoute = PublicNoticeRouteImport.update({
+  id: '/public-notice',
+  path: '/public-notice',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MediaRoute = MediaRouteImport.update({
+  id: '/media',
+  path: '/media',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InformationRoute = InformationRouteImport.update({
+  id: '/information',
+  path: '/information',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EstablishmentsRoute = EstablishmentsRouteImport.update({
+  id: '/establishments',
+  path: '/establishments',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EmployeesRoute = EmployeesRouteImport.update({
+  id: '/employees',
+  path: '/employees',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AppointmentRoute = AppointmentRouteImport.update({
-  id: '/appointment',
-  path: '/appointment',
+const CareersRoute = CareersRouteImport.update({
+  id: '/careers',
+  path: '/careers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -46,65 +101,377 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ResearchSocialSciencesRoute = ResearchSocialSciencesRouteImport.update({
+  id: '/social-sciences',
+  path: '/social-sciences',
+  getParentRoute: () => ResearchRoute,
+} as any)
+const ResearchPlantSciencesRoute = ResearchPlantSciencesRouteImport.update({
+  id: '/plant-sciences',
+  path: '/plant-sciences',
+  getParentRoute: () => ResearchRoute,
+} as any)
+const ResearchNaturalResourcesRoute =
+  ResearchNaturalResourcesRouteImport.update({
+    id: '/natural-resources',
+    path: '/natural-resources',
+    getParentRoute: () => ResearchRoute,
+  } as any)
+const ResearchEngineeringRoute = ResearchEngineeringRouteImport.update({
+  id: '/engineering',
+  path: '/engineering',
+  getParentRoute: () => ResearchRoute,
+} as any)
+const ResearchCoordinationRoute = ResearchCoordinationRouteImport.update({
+  id: '/coordination',
+  path: '/coordination',
+  getParentRoute: () => ResearchRoute,
+} as any)
+const ResearchAnimalSciencesRoute = ResearchAnimalSciencesRouteImport.update({
+  id: '/animal-sciences',
+  path: '/animal-sciences',
+  getParentRoute: () => ResearchRoute,
+} as any)
+const PublicNoticeTendersRoute = PublicNoticeTendersRouteImport.update({
+  id: '/tenders',
+  path: '/tenders',
+  getParentRoute: () => PublicNoticeRoute,
+} as any)
+const PublicNoticeNotificationsRoute =
+  PublicNoticeNotificationsRouteImport.update({
+    id: '/notifications',
+    path: '/notifications',
+    getParentRoute: () => PublicNoticeRoute,
+  } as any)
+const PublicNoticeCircularsRoute = PublicNoticeCircularsRouteImport.update({
+  id: '/circulars',
+  path: '/circulars',
+  getParentRoute: () => PublicNoticeRoute,
+} as any)
+const MediaPressReleasesRoute = MediaPressReleasesRouteImport.update({
+  id: '/press-releases',
+  path: '/press-releases',
+  getParentRoute: () => MediaRoute,
+} as any)
+const MediaNewsRoute = MediaNewsRouteImport.update({
+  id: '/news',
+  path: '/news',
+  getParentRoute: () => MediaRoute,
+} as any)
+const MediaGalleryRoute = MediaGalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => MediaRoute,
+} as any)
+const EstablishmentsSarcRoute = EstablishmentsSarcRouteImport.update({
+  id: '/sarc',
+  path: '/sarc',
+  getParentRoute: () => EstablishmentsRoute,
+} as any)
+const EstablishmentsNscriRoute = EstablishmentsNscriRouteImport.update({
+  id: '/nscri',
+  path: '/nscri',
+  getParentRoute: () => EstablishmentsRoute,
+} as any)
+const EstablishmentsNarcRoute = EstablishmentsNarcRouteImport.update({
+  id: '/narc',
+  path: '/narc',
+  getParentRoute: () => EstablishmentsRoute,
+} as any)
+const EstablishmentsBardcRoute = EstablishmentsBardcRouteImport.update({
+  id: '/bardc',
+  path: '/bardc',
+  getParentRoute: () => EstablishmentsRoute,
+} as any)
+const EstablishmentsAzriBwpRoute = EstablishmentsAzriBwpRouteImport.update({
+  id: '/azri-bwp',
+  path: '/azri-bwp',
+  getParentRoute: () => EstablishmentsRoute,
+} as any)
+const EmployeesWebmailRoute = EmployeesWebmailRouteImport.update({
+  id: '/webmail',
+  path: '/webmail',
+  getParentRoute: () => EmployeesRoute,
+} as any)
+const EmployeesPayslipsRoute = EmployeesPayslipsRouteImport.update({
+  id: '/payslips',
+  path: '/payslips',
+  getParentRoute: () => EmployeesRoute,
+} as any)
+const EmployeesLeaveRoute = EmployeesLeaveRouteImport.update({
+  id: '/leave',
+  path: '/leave',
+  getParentRoute: () => EmployeesRoute,
+} as any)
+const CareersApplyRoute = CareersApplyRouteImport.update({
+  id: '/apply',
+  path: '/apply',
+  getParentRoute: () => CareersRoute,
+} as any)
+const AboutVisionRoute = AboutVisionRouteImport.update({
+  id: '/vision',
+  path: '/vision',
+  getParentRoute: () => AboutRoute,
+} as any)
+const AboutOrganogramRoute = AboutOrganogramRouteImport.update({
+  id: '/organogram',
+  path: '/organogram',
+  getParentRoute: () => AboutRoute,
+} as any)
+const AboutChairmanRoute = AboutChairmanRouteImport.update({
+  id: '/chairman',
+  path: '/chairman',
+  getParentRoute: () => AboutRoute,
+} as any)
+const AboutBogRoute = AboutBogRouteImport.update({
+  id: '/bog',
+  path: '/bog',
+  getParentRoute: () => AboutRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/appointment': typeof AppointmentRoute
+  '/about': typeof AboutRouteWithChildren
+  '/careers': typeof CareersRouteWithChildren
   '/contact': typeof ContactRoute
-  '/research': typeof ResearchRoute
-  '/services': typeof ServicesRoute
+  '/employees': typeof EmployeesRouteWithChildren
+  '/establishments': typeof EstablishmentsRouteWithChildren
+  '/information': typeof InformationRoute
+  '/media': typeof MediaRouteWithChildren
+  '/public-notice': typeof PublicNoticeRouteWithChildren
+  '/research': typeof ResearchRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/about/bog': typeof AboutBogRoute
+  '/about/chairman': typeof AboutChairmanRoute
+  '/about/organogram': typeof AboutOrganogramRoute
+  '/about/vision': typeof AboutVisionRoute
+  '/careers/apply': typeof CareersApplyRoute
+  '/employees/leave': typeof EmployeesLeaveRoute
+  '/employees/payslips': typeof EmployeesPayslipsRoute
+  '/employees/webmail': typeof EmployeesWebmailRoute
+  '/establishments/azri-bwp': typeof EstablishmentsAzriBwpRoute
+  '/establishments/bardc': typeof EstablishmentsBardcRoute
+  '/establishments/narc': typeof EstablishmentsNarcRoute
+  '/establishments/nscri': typeof EstablishmentsNscriRoute
+  '/establishments/sarc': typeof EstablishmentsSarcRoute
+  '/media/gallery': typeof MediaGalleryRoute
+  '/media/news': typeof MediaNewsRoute
+  '/media/press-releases': typeof MediaPressReleasesRoute
+  '/public-notice/circulars': typeof PublicNoticeCircularsRoute
+  '/public-notice/notifications': typeof PublicNoticeNotificationsRoute
+  '/public-notice/tenders': typeof PublicNoticeTendersRoute
+  '/research/animal-sciences': typeof ResearchAnimalSciencesRoute
+  '/research/coordination': typeof ResearchCoordinationRoute
+  '/research/engineering': typeof ResearchEngineeringRoute
+  '/research/natural-resources': typeof ResearchNaturalResourcesRoute
+  '/research/plant-sciences': typeof ResearchPlantSciencesRoute
+  '/research/social-sciences': typeof ResearchSocialSciencesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/appointment': typeof AppointmentRoute
+  '/about': typeof AboutRouteWithChildren
+  '/careers': typeof CareersRouteWithChildren
   '/contact': typeof ContactRoute
-  '/research': typeof ResearchRoute
-  '/services': typeof ServicesRoute
+  '/employees': typeof EmployeesRouteWithChildren
+  '/establishments': typeof EstablishmentsRouteWithChildren
+  '/information': typeof InformationRoute
+  '/media': typeof MediaRouteWithChildren
+  '/public-notice': typeof PublicNoticeRouteWithChildren
+  '/research': typeof ResearchRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/about/bog': typeof AboutBogRoute
+  '/about/chairman': typeof AboutChairmanRoute
+  '/about/organogram': typeof AboutOrganogramRoute
+  '/about/vision': typeof AboutVisionRoute
+  '/careers/apply': typeof CareersApplyRoute
+  '/employees/leave': typeof EmployeesLeaveRoute
+  '/employees/payslips': typeof EmployeesPayslipsRoute
+  '/employees/webmail': typeof EmployeesWebmailRoute
+  '/establishments/azri-bwp': typeof EstablishmentsAzriBwpRoute
+  '/establishments/bardc': typeof EstablishmentsBardcRoute
+  '/establishments/narc': typeof EstablishmentsNarcRoute
+  '/establishments/nscri': typeof EstablishmentsNscriRoute
+  '/establishments/sarc': typeof EstablishmentsSarcRoute
+  '/media/gallery': typeof MediaGalleryRoute
+  '/media/news': typeof MediaNewsRoute
+  '/media/press-releases': typeof MediaPressReleasesRoute
+  '/public-notice/circulars': typeof PublicNoticeCircularsRoute
+  '/public-notice/notifications': typeof PublicNoticeNotificationsRoute
+  '/public-notice/tenders': typeof PublicNoticeTendersRoute
+  '/research/animal-sciences': typeof ResearchAnimalSciencesRoute
+  '/research/coordination': typeof ResearchCoordinationRoute
+  '/research/engineering': typeof ResearchEngineeringRoute
+  '/research/natural-resources': typeof ResearchNaturalResourcesRoute
+  '/research/plant-sciences': typeof ResearchPlantSciencesRoute
+  '/research/social-sciences': typeof ResearchSocialSciencesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/appointment': typeof AppointmentRoute
+  '/about': typeof AboutRouteWithChildren
+  '/careers': typeof CareersRouteWithChildren
   '/contact': typeof ContactRoute
-  '/research': typeof ResearchRoute
-  '/services': typeof ServicesRoute
+  '/employees': typeof EmployeesRouteWithChildren
+  '/establishments': typeof EstablishmentsRouteWithChildren
+  '/information': typeof InformationRoute
+  '/media': typeof MediaRouteWithChildren
+  '/public-notice': typeof PublicNoticeRouteWithChildren
+  '/research': typeof ResearchRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/about/bog': typeof AboutBogRoute
+  '/about/chairman': typeof AboutChairmanRoute
+  '/about/organogram': typeof AboutOrganogramRoute
+  '/about/vision': typeof AboutVisionRoute
+  '/careers/apply': typeof CareersApplyRoute
+  '/employees/leave': typeof EmployeesLeaveRoute
+  '/employees/payslips': typeof EmployeesPayslipsRoute
+  '/employees/webmail': typeof EmployeesWebmailRoute
+  '/establishments/azri-bwp': typeof EstablishmentsAzriBwpRoute
+  '/establishments/bardc': typeof EstablishmentsBardcRoute
+  '/establishments/narc': typeof EstablishmentsNarcRoute
+  '/establishments/nscri': typeof EstablishmentsNscriRoute
+  '/establishments/sarc': typeof EstablishmentsSarcRoute
+  '/media/gallery': typeof MediaGalleryRoute
+  '/media/news': typeof MediaNewsRoute
+  '/media/press-releases': typeof MediaPressReleasesRoute
+  '/public-notice/circulars': typeof PublicNoticeCircularsRoute
+  '/public-notice/notifications': typeof PublicNoticeNotificationsRoute
+  '/public-notice/tenders': typeof PublicNoticeTendersRoute
+  '/research/animal-sciences': typeof ResearchAnimalSciencesRoute
+  '/research/coordination': typeof ResearchCoordinationRoute
+  '/research/engineering': typeof ResearchEngineeringRoute
+  '/research/natural-resources': typeof ResearchNaturalResourcesRoute
+  '/research/plant-sciences': typeof ResearchPlantSciencesRoute
+  '/research/social-sciences': typeof ResearchSocialSciencesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/appointment'
+    | '/about'
+    | '/careers'
     | '/contact'
+    | '/employees'
+    | '/establishments'
+    | '/information'
+    | '/media'
+    | '/public-notice'
     | '/research'
-    | '/services'
     | '/sitemap.xml'
+    | '/about/bog'
+    | '/about/chairman'
+    | '/about/organogram'
+    | '/about/vision'
+    | '/careers/apply'
+    | '/employees/leave'
+    | '/employees/payslips'
+    | '/employees/webmail'
+    | '/establishments/azri-bwp'
+    | '/establishments/bardc'
+    | '/establishments/narc'
+    | '/establishments/nscri'
+    | '/establishments/sarc'
+    | '/media/gallery'
+    | '/media/news'
+    | '/media/press-releases'
+    | '/public-notice/circulars'
+    | '/public-notice/notifications'
+    | '/public-notice/tenders'
+    | '/research/animal-sciences'
+    | '/research/coordination'
+    | '/research/engineering'
+    | '/research/natural-resources'
+    | '/research/plant-sciences'
+    | '/research/social-sciences'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/appointment'
+    | '/about'
+    | '/careers'
     | '/contact'
+    | '/employees'
+    | '/establishments'
+    | '/information'
+    | '/media'
+    | '/public-notice'
     | '/research'
-    | '/services'
     | '/sitemap.xml'
+    | '/about/bog'
+    | '/about/chairman'
+    | '/about/organogram'
+    | '/about/vision'
+    | '/careers/apply'
+    | '/employees/leave'
+    | '/employees/payslips'
+    | '/employees/webmail'
+    | '/establishments/azri-bwp'
+    | '/establishments/bardc'
+    | '/establishments/narc'
+    | '/establishments/nscri'
+    | '/establishments/sarc'
+    | '/media/gallery'
+    | '/media/news'
+    | '/media/press-releases'
+    | '/public-notice/circulars'
+    | '/public-notice/notifications'
+    | '/public-notice/tenders'
+    | '/research/animal-sciences'
+    | '/research/coordination'
+    | '/research/engineering'
+    | '/research/natural-resources'
+    | '/research/plant-sciences'
+    | '/research/social-sciences'
   id:
     | '__root__'
     | '/'
-    | '/appointment'
+    | '/about'
+    | '/careers'
     | '/contact'
+    | '/employees'
+    | '/establishments'
+    | '/information'
+    | '/media'
+    | '/public-notice'
     | '/research'
-    | '/services'
     | '/sitemap.xml'
+    | '/about/bog'
+    | '/about/chairman'
+    | '/about/organogram'
+    | '/about/vision'
+    | '/careers/apply'
+    | '/employees/leave'
+    | '/employees/payslips'
+    | '/employees/webmail'
+    | '/establishments/azri-bwp'
+    | '/establishments/bardc'
+    | '/establishments/narc'
+    | '/establishments/nscri'
+    | '/establishments/sarc'
+    | '/media/gallery'
+    | '/media/news'
+    | '/media/press-releases'
+    | '/public-notice/circulars'
+    | '/public-notice/notifications'
+    | '/public-notice/tenders'
+    | '/research/animal-sciences'
+    | '/research/coordination'
+    | '/research/engineering'
+    | '/research/natural-resources'
+    | '/research/plant-sciences'
+    | '/research/social-sciences'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AppointmentRoute: typeof AppointmentRoute
+  AboutRoute: typeof AboutRouteWithChildren
+  CareersRoute: typeof CareersRouteWithChildren
   ContactRoute: typeof ContactRoute
-  ResearchRoute: typeof ResearchRoute
-  ServicesRoute: typeof ServicesRoute
+  EmployeesRoute: typeof EmployeesRouteWithChildren
+  EstablishmentsRoute: typeof EstablishmentsRouteWithChildren
+  InformationRoute: typeof InformationRoute
+  MediaRoute: typeof MediaRouteWithChildren
+  PublicNoticeRoute: typeof PublicNoticeRouteWithChildren
+  ResearchRoute: typeof ResearchRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
@@ -117,18 +484,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/services': {
-      id: '/services'
-      path: '/services'
-      fullPath: '/services'
-      preLoaderRoute: typeof ServicesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/research': {
       id: '/research'
       path: '/research'
       fullPath: '/research'
       preLoaderRoute: typeof ResearchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/public-notice': {
+      id: '/public-notice'
+      path: '/public-notice'
+      fullPath: '/public-notice'
+      preLoaderRoute: typeof PublicNoticeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/media': {
+      id: '/media'
+      path: '/media'
+      fullPath: '/media'
+      preLoaderRoute: typeof MediaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/information': {
+      id: '/information'
+      path: '/information'
+      fullPath: '/information'
+      preLoaderRoute: typeof InformationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/establishments': {
+      id: '/establishments'
+      path: '/establishments'
+      fullPath: '/establishments'
+      preLoaderRoute: typeof EstablishmentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/employees': {
+      id: '/employees'
+      path: '/employees'
+      fullPath: '/employees'
+      preLoaderRoute: typeof EmployeesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -138,11 +533,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/appointment': {
-      id: '/appointment'
-      path: '/appointment'
-      fullPath: '/appointment'
-      preLoaderRoute: typeof AppointmentRouteImport
+    '/careers': {
+      id: '/careers'
+      path: '/careers'
+      fullPath: '/careers'
+      preLoaderRoute: typeof CareersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -152,15 +554,310 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/research/social-sciences': {
+      id: '/research/social-sciences'
+      path: '/social-sciences'
+      fullPath: '/research/social-sciences'
+      preLoaderRoute: typeof ResearchSocialSciencesRouteImport
+      parentRoute: typeof ResearchRoute
+    }
+    '/research/plant-sciences': {
+      id: '/research/plant-sciences'
+      path: '/plant-sciences'
+      fullPath: '/research/plant-sciences'
+      preLoaderRoute: typeof ResearchPlantSciencesRouteImport
+      parentRoute: typeof ResearchRoute
+    }
+    '/research/natural-resources': {
+      id: '/research/natural-resources'
+      path: '/natural-resources'
+      fullPath: '/research/natural-resources'
+      preLoaderRoute: typeof ResearchNaturalResourcesRouteImport
+      parentRoute: typeof ResearchRoute
+    }
+    '/research/engineering': {
+      id: '/research/engineering'
+      path: '/engineering'
+      fullPath: '/research/engineering'
+      preLoaderRoute: typeof ResearchEngineeringRouteImport
+      parentRoute: typeof ResearchRoute
+    }
+    '/research/coordination': {
+      id: '/research/coordination'
+      path: '/coordination'
+      fullPath: '/research/coordination'
+      preLoaderRoute: typeof ResearchCoordinationRouteImport
+      parentRoute: typeof ResearchRoute
+    }
+    '/research/animal-sciences': {
+      id: '/research/animal-sciences'
+      path: '/animal-sciences'
+      fullPath: '/research/animal-sciences'
+      preLoaderRoute: typeof ResearchAnimalSciencesRouteImport
+      parentRoute: typeof ResearchRoute
+    }
+    '/public-notice/tenders': {
+      id: '/public-notice/tenders'
+      path: '/tenders'
+      fullPath: '/public-notice/tenders'
+      preLoaderRoute: typeof PublicNoticeTendersRouteImport
+      parentRoute: typeof PublicNoticeRoute
+    }
+    '/public-notice/notifications': {
+      id: '/public-notice/notifications'
+      path: '/notifications'
+      fullPath: '/public-notice/notifications'
+      preLoaderRoute: typeof PublicNoticeNotificationsRouteImport
+      parentRoute: typeof PublicNoticeRoute
+    }
+    '/public-notice/circulars': {
+      id: '/public-notice/circulars'
+      path: '/circulars'
+      fullPath: '/public-notice/circulars'
+      preLoaderRoute: typeof PublicNoticeCircularsRouteImport
+      parentRoute: typeof PublicNoticeRoute
+    }
+    '/media/press-releases': {
+      id: '/media/press-releases'
+      path: '/press-releases'
+      fullPath: '/media/press-releases'
+      preLoaderRoute: typeof MediaPressReleasesRouteImport
+      parentRoute: typeof MediaRoute
+    }
+    '/media/news': {
+      id: '/media/news'
+      path: '/news'
+      fullPath: '/media/news'
+      preLoaderRoute: typeof MediaNewsRouteImport
+      parentRoute: typeof MediaRoute
+    }
+    '/media/gallery': {
+      id: '/media/gallery'
+      path: '/gallery'
+      fullPath: '/media/gallery'
+      preLoaderRoute: typeof MediaGalleryRouteImport
+      parentRoute: typeof MediaRoute
+    }
+    '/establishments/sarc': {
+      id: '/establishments/sarc'
+      path: '/sarc'
+      fullPath: '/establishments/sarc'
+      preLoaderRoute: typeof EstablishmentsSarcRouteImport
+      parentRoute: typeof EstablishmentsRoute
+    }
+    '/establishments/nscri': {
+      id: '/establishments/nscri'
+      path: '/nscri'
+      fullPath: '/establishments/nscri'
+      preLoaderRoute: typeof EstablishmentsNscriRouteImport
+      parentRoute: typeof EstablishmentsRoute
+    }
+    '/establishments/narc': {
+      id: '/establishments/narc'
+      path: '/narc'
+      fullPath: '/establishments/narc'
+      preLoaderRoute: typeof EstablishmentsNarcRouteImport
+      parentRoute: typeof EstablishmentsRoute
+    }
+    '/establishments/bardc': {
+      id: '/establishments/bardc'
+      path: '/bardc'
+      fullPath: '/establishments/bardc'
+      preLoaderRoute: typeof EstablishmentsBardcRouteImport
+      parentRoute: typeof EstablishmentsRoute
+    }
+    '/establishments/azri-bwp': {
+      id: '/establishments/azri-bwp'
+      path: '/azri-bwp'
+      fullPath: '/establishments/azri-bwp'
+      preLoaderRoute: typeof EstablishmentsAzriBwpRouteImport
+      parentRoute: typeof EstablishmentsRoute
+    }
+    '/employees/webmail': {
+      id: '/employees/webmail'
+      path: '/webmail'
+      fullPath: '/employees/webmail'
+      preLoaderRoute: typeof EmployeesWebmailRouteImport
+      parentRoute: typeof EmployeesRoute
+    }
+    '/employees/payslips': {
+      id: '/employees/payslips'
+      path: '/payslips'
+      fullPath: '/employees/payslips'
+      preLoaderRoute: typeof EmployeesPayslipsRouteImport
+      parentRoute: typeof EmployeesRoute
+    }
+    '/employees/leave': {
+      id: '/employees/leave'
+      path: '/leave'
+      fullPath: '/employees/leave'
+      preLoaderRoute: typeof EmployeesLeaveRouteImport
+      parentRoute: typeof EmployeesRoute
+    }
+    '/careers/apply': {
+      id: '/careers/apply'
+      path: '/apply'
+      fullPath: '/careers/apply'
+      preLoaderRoute: typeof CareersApplyRouteImport
+      parentRoute: typeof CareersRoute
+    }
+    '/about/vision': {
+      id: '/about/vision'
+      path: '/vision'
+      fullPath: '/about/vision'
+      preLoaderRoute: typeof AboutVisionRouteImport
+      parentRoute: typeof AboutRoute
+    }
+    '/about/organogram': {
+      id: '/about/organogram'
+      path: '/organogram'
+      fullPath: '/about/organogram'
+      preLoaderRoute: typeof AboutOrganogramRouteImport
+      parentRoute: typeof AboutRoute
+    }
+    '/about/chairman': {
+      id: '/about/chairman'
+      path: '/chairman'
+      fullPath: '/about/chairman'
+      preLoaderRoute: typeof AboutChairmanRouteImport
+      parentRoute: typeof AboutRoute
+    }
+    '/about/bog': {
+      id: '/about/bog'
+      path: '/bog'
+      fullPath: '/about/bog'
+      preLoaderRoute: typeof AboutBogRouteImport
+      parentRoute: typeof AboutRoute
+    }
   }
 }
 
+interface AboutRouteChildren {
+  AboutBogRoute: typeof AboutBogRoute
+  AboutChairmanRoute: typeof AboutChairmanRoute
+  AboutOrganogramRoute: typeof AboutOrganogramRoute
+  AboutVisionRoute: typeof AboutVisionRoute
+}
+
+const AboutRouteChildren: AboutRouteChildren = {
+  AboutBogRoute: AboutBogRoute,
+  AboutChairmanRoute: AboutChairmanRoute,
+  AboutOrganogramRoute: AboutOrganogramRoute,
+  AboutVisionRoute: AboutVisionRoute,
+}
+
+const AboutRouteWithChildren = AboutRoute._addFileChildren(AboutRouteChildren)
+
+interface CareersRouteChildren {
+  CareersApplyRoute: typeof CareersApplyRoute
+}
+
+const CareersRouteChildren: CareersRouteChildren = {
+  CareersApplyRoute: CareersApplyRoute,
+}
+
+const CareersRouteWithChildren =
+  CareersRoute._addFileChildren(CareersRouteChildren)
+
+interface EmployeesRouteChildren {
+  EmployeesLeaveRoute: typeof EmployeesLeaveRoute
+  EmployeesPayslipsRoute: typeof EmployeesPayslipsRoute
+  EmployeesWebmailRoute: typeof EmployeesWebmailRoute
+}
+
+const EmployeesRouteChildren: EmployeesRouteChildren = {
+  EmployeesLeaveRoute: EmployeesLeaveRoute,
+  EmployeesPayslipsRoute: EmployeesPayslipsRoute,
+  EmployeesWebmailRoute: EmployeesWebmailRoute,
+}
+
+const EmployeesRouteWithChildren = EmployeesRoute._addFileChildren(
+  EmployeesRouteChildren,
+)
+
+interface EstablishmentsRouteChildren {
+  EstablishmentsAzriBwpRoute: typeof EstablishmentsAzriBwpRoute
+  EstablishmentsBardcRoute: typeof EstablishmentsBardcRoute
+  EstablishmentsNarcRoute: typeof EstablishmentsNarcRoute
+  EstablishmentsNscriRoute: typeof EstablishmentsNscriRoute
+  EstablishmentsSarcRoute: typeof EstablishmentsSarcRoute
+}
+
+const EstablishmentsRouteChildren: EstablishmentsRouteChildren = {
+  EstablishmentsAzriBwpRoute: EstablishmentsAzriBwpRoute,
+  EstablishmentsBardcRoute: EstablishmentsBardcRoute,
+  EstablishmentsNarcRoute: EstablishmentsNarcRoute,
+  EstablishmentsNscriRoute: EstablishmentsNscriRoute,
+  EstablishmentsSarcRoute: EstablishmentsSarcRoute,
+}
+
+const EstablishmentsRouteWithChildren = EstablishmentsRoute._addFileChildren(
+  EstablishmentsRouteChildren,
+)
+
+interface MediaRouteChildren {
+  MediaGalleryRoute: typeof MediaGalleryRoute
+  MediaNewsRoute: typeof MediaNewsRoute
+  MediaPressReleasesRoute: typeof MediaPressReleasesRoute
+}
+
+const MediaRouteChildren: MediaRouteChildren = {
+  MediaGalleryRoute: MediaGalleryRoute,
+  MediaNewsRoute: MediaNewsRoute,
+  MediaPressReleasesRoute: MediaPressReleasesRoute,
+}
+
+const MediaRouteWithChildren = MediaRoute._addFileChildren(MediaRouteChildren)
+
+interface PublicNoticeRouteChildren {
+  PublicNoticeCircularsRoute: typeof PublicNoticeCircularsRoute
+  PublicNoticeNotificationsRoute: typeof PublicNoticeNotificationsRoute
+  PublicNoticeTendersRoute: typeof PublicNoticeTendersRoute
+}
+
+const PublicNoticeRouteChildren: PublicNoticeRouteChildren = {
+  PublicNoticeCircularsRoute: PublicNoticeCircularsRoute,
+  PublicNoticeNotificationsRoute: PublicNoticeNotificationsRoute,
+  PublicNoticeTendersRoute: PublicNoticeTendersRoute,
+}
+
+const PublicNoticeRouteWithChildren = PublicNoticeRoute._addFileChildren(
+  PublicNoticeRouteChildren,
+)
+
+interface ResearchRouteChildren {
+  ResearchAnimalSciencesRoute: typeof ResearchAnimalSciencesRoute
+  ResearchCoordinationRoute: typeof ResearchCoordinationRoute
+  ResearchEngineeringRoute: typeof ResearchEngineeringRoute
+  ResearchNaturalResourcesRoute: typeof ResearchNaturalResourcesRoute
+  ResearchPlantSciencesRoute: typeof ResearchPlantSciencesRoute
+  ResearchSocialSciencesRoute: typeof ResearchSocialSciencesRoute
+}
+
+const ResearchRouteChildren: ResearchRouteChildren = {
+  ResearchAnimalSciencesRoute: ResearchAnimalSciencesRoute,
+  ResearchCoordinationRoute: ResearchCoordinationRoute,
+  ResearchEngineeringRoute: ResearchEngineeringRoute,
+  ResearchNaturalResourcesRoute: ResearchNaturalResourcesRoute,
+  ResearchPlantSciencesRoute: ResearchPlantSciencesRoute,
+  ResearchSocialSciencesRoute: ResearchSocialSciencesRoute,
+}
+
+const ResearchRouteWithChildren = ResearchRoute._addFileChildren(
+  ResearchRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AppointmentRoute: AppointmentRoute,
+  AboutRoute: AboutRouteWithChildren,
+  CareersRoute: CareersRouteWithChildren,
   ContactRoute: ContactRoute,
-  ResearchRoute: ResearchRoute,
-  ServicesRoute: ServicesRoute,
+  EmployeesRoute: EmployeesRouteWithChildren,
+  EstablishmentsRoute: EstablishmentsRouteWithChildren,
+  InformationRoute: InformationRoute,
+  MediaRoute: MediaRouteWithChildren,
+  PublicNoticeRoute: PublicNoticeRouteWithChildren,
+  ResearchRoute: ResearchRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport

@@ -1,162 +1,117 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState, type FormEvent } from "react";
-import { ExternalLink, Send } from "lucide-react";
-import { toast } from "sonner";
-import { postContact } from "../lib/api";
 
 export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact — Dr. Faisal Sohail Fateh" },
-      {
-        name: "description",
-        content:
-          "Contact Dr. Faisal Sohail Fateh, Principal Scientific Officer at NARC Islamabad. Phone: +92-333-5562477. Email: f.sohail@parc.gov.pk",
-      },
-      { property: "og:title", content: "Contact — Dr. Faisal Sohail Fateh" },
-      { property: "og:description", content: "Contact Dr. Faisal Sohail Fateh at NARC Islamabad." },
-    ],
-  }),
-  component: Contact,
+  component: ContactPage,
 });
 
-function Contact() {
-  const [v, setV] = useState({ name: "", email: "", org: "", msg: "" });
-
-  const submit = async (e: FormEvent) => {
-    e.preventDefault();
-
-    if (!v.name.trim() || !v.email.includes("@") || v.msg.trim().length < 10) {
-      toast.error("Please complete all required fields (message must be at least 10 characters).");
-      return;
-    }
-
-    try {
-      await postContact(v);
-      toast.success("Message received. Expect a reply within one business day.");
-      setV({ name: "", email: "", org: "", msg: "" });
-    } catch (error) {
-      toast.error(
-        error instanceof Error ? error.message : "Unable to send message. Please try again later.",
-      );
-    }
-  };
-
+function ContactPage() {
   return (
-    <div className="mx-auto max-w-7xl px-6 pt-16 pb-20 relative">
-      <div
-        className="absolute top-1/4 right-0 -z-10 h-[500px] w-[500px] rounded-full bg-primary/5 blur-[120px] dark:bg-primary/10"
-        aria-hidden
-      />
+    <div className="bg-white py-10 sm:py-16">
+      <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
+        <h1 className="text-3xl font-bold text-[#104591] sm:text-4xl">Contact Us</h1>
+        <div className="mt-2 h-1 w-20 bg-[#0E8B1A]" />
 
-      <header className="max-w-3xl animate-fade-up">
-        <p className="text-xs font-semibold uppercase tracking-widest text-accent">Contact</p>
-        <h1 className="mt-3 text-5xl font-extrabold tracking-tight sm:text-6xl">
-          Get in <span className="gradient-text">touch</span>.
-        </h1>
-        <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
-          For diagnostic consultations, please use our appointment form. For research collaboration,
-          training enquiries, or general correspondence — reach Dr. Faisal Sohail Fateh below.
-        </p>
-      </header>
-
-      <div className="mt-14 grid gap-10 lg:grid-cols-12 items-start">
-        <form
-          onSubmit={submit}
-          className="lg:col-span-7 rounded-3xl border border-border bg-card p-6 shadow-elegant sm:p-10 animate-fade-up"
-          style={{ animationDelay: "100ms" }}
-        >
-          <div className="space-y-6">
-            <h3 className="text-xl font-bold text-foreground">Send an Enquiry</h3>
-            <Floating label="Full name" value={v.name} onChange={(x) => setV({ ...v, name: x })} />
-            <Floating
-              label="Email"
-              type="email"
-              value={v.email}
-              onChange={(x) => setV({ ...v, email: x })}
-            />
-            <Floating label="Organization" value={v.org} onChange={(x) => setV({ ...v, org: x })} />
-            <Floating
-              label="Message"
-              textarea
-              value={v.msg}
-              onChange={(x) => setV({ ...v, msg: x })}
-            />
-            <button
-              type="submit"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-5 py-4 text-sm font-semibold text-primary-foreground shadow-elegant transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary/95 cursor-pointer"
-            >
-              Send Message <Send className="h-4 w-4" />
-            </button>
-          </div>
-        </form>
-
-        <div className="lg:col-span-5 animate-fade-up" style={{ animationDelay: "150ms" }}>
-          <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-elegant relative group">
-            <div className="absolute top-3 right-3 z-10 flex gap-2">
-              <span className="bg-background/90 backdrop-blur text-[10px] font-bold px-2 py-1 rounded border border-border text-foreground">
-                33.684° N, 73.099° E
-              </span>
-              <a
-                href="https://www.google.com/maps/search/?api=1&query=33.684,73.099"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-primary/95 text-primary-foreground text-[10px] font-bold px-2 py-1 rounded border border-primary hover:bg-primary transition-colors flex items-center gap-1"
+        <div className="mt-8 grid gap-8 lg:grid-cols-2">
+          {/* Contact Form */}
+          <div className="rounded border border-[#e9e9e9] bg-[#fbfbfb] p-6">
+            <h2 className="text-lg font-bold text-[#212529]">Send us a Message</h2>
+            <form className="mt-4 space-y-4">
+              <div className="grid gap-4 sm:grid-cols-2">
+                <input
+                  type="text"
+                  placeholder="Your Name"
+                  required
+                  className="rounded border border-gray-300 px-3 py-2.5 text-sm focus:border-[#104591] focus:outline-none"
+                />
+                <input
+                  type="email"
+                  placeholder="Your Email"
+                  required
+                  className="rounded border border-gray-300 px-3 py-2.5 text-sm focus:border-[#104591] focus:outline-none"
+                />
+              </div>
+              <input
+                type="text"
+                placeholder="Subject"
+                className="w-full rounded border border-gray-300 px-3 py-2.5 text-sm focus:border-[#104591] focus:outline-none"
+              />
+              <textarea
+                placeholder="Your Message"
+                rows={5}
+                required
+                className="w-full resize-none rounded border border-gray-300 px-3 py-2.5 text-sm focus:border-[#104591] focus:outline-none"
+              />
+              <button
+                type="submit"
+                className="w-full rounded bg-[#104591] py-2.5 text-sm font-semibold text-white hover:bg-[#0d3a7a]"
               >
-                Google Maps <ExternalLink className="h-3 w-3" />
-              </a>
+                Send Message
+              </button>
+            </form>
+          </div>
+
+          {/* Contact Info */}
+          <div className="space-y-6">
+            <div className="rounded border border-[#e9e9e9] bg-[#fbfbfb] p-6">
+              <h2 className="text-lg font-bold text-[#212529]">Head Office</h2>
+              <div className="mt-4 space-y-3 text-sm text-[#65676b]">
+                <p className="flex items-start gap-2">
+                  <svg
+                    className="mt-0.5 h-4 w-4 shrink-0 text-[#104591]"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                  </svg>
+                  20 Attaturk Avenue, G-5/1, Islamabad, 44000, Pakistan
+                </p>
+                <p className="flex items-center gap-2">
+                  <svg
+                    className="h-4 w-4 shrink-0 text-[#104591]"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                  </svg>
+                  +92-51-9200071
+                </p>
+                <p className="flex items-center gap-2">
+                  <svg
+                    className="h-4 w-4 shrink-0 text-[#104591]"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                  </svg>
+                  webmaster@parc.gov.pk
+                </p>
+                <p className="flex items-center gap-2">
+                  <svg
+                    className="h-4 w-4 shrink-0 text-[#104591]"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z" />
+                  </svg>
+                  Mon-Fri 9:00am to 5:00pm
+                </p>
+              </div>
             </div>
-            <iframe
-              title="NARC Islamabad location"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=73.08%2C33.67%2C73.12%2C33.70&layer=mapnik&marker=33.684%2C73.099"
-              className="h-64 w-full grayscale contrast-110 dark:invert dark:opacity-80"
-              loading="lazy"
-            />
+
+            <div className="overflow-hidden rounded border border-[#e9e9e9]">
+              <iframe
+                title="PPO Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.0!2d73.05!3d33.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDQyJzAwLjAiTiA3M8KwMDMnMDAuMCJF!5e0!3m2!1sen!2spk!4v1"
+                width="100%"
+                height="250"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+              />
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  );
-}
-
-function Floating({
-  label,
-  value,
-  onChange,
-  type = "text",
-  textarea = false,
-}: {
-  label: string;
-  value: string;
-  onChange: (v: string) => void;
-  type?: string;
-  textarea?: boolean;
-}) {
-  const cls =
-    "peer w-full rounded-xl border border-border bg-background px-4 pt-[1.625rem] pb-[0.625rem] text-sm text-foreground transition-all focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20";
-
-  return (
-    <div className="relative mb-2">
-      {textarea ? (
-        <textarea
-          rows={4}
-          value={value}
-          onChange={(e) => onChange(e.target.value)}
-          placeholder=" "
-          className={cls}
-        />
-      ) : (
-        <input
-          type={type}
-          value={value}
-          onChange={(e) => onChange(e.target.value)}
-          placeholder=" "
-          className={cls}
-        />
-      )}
-      <span className="pointer-events-none absolute left-4 top-2 text-[10px] font-bold uppercase tracking-widest text-muted-foreground transition-all peer-placeholder-shown:top-4.5 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-[10px]">
-        {label}
-      </span>
     </div>
   );
 }

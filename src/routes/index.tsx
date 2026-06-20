@@ -4,7 +4,6 @@ import {
   ParcProgramGrid,
   ParcLeadershipMini,
   ParcLatestNewsPanel,
-  ParcEmployeeCorner,
   ParcFeaturedNews,
   ParcInfoCards,
 } from "@/components/parc";
@@ -57,14 +56,9 @@ function Index() {
       <section className="bg-white pb-6">
         <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
           <div className="flex flex-col gap-4 lg:flex-row">
-            {/* Latest News Panel (~65%) */}
-            <div className="flex-1 lg:w-[65%]">
+            {/* Latest News Panel (full width) */}
+            <div className="w-full">
               <ParcLatestNewsPanel />
-            </div>
-
-            {/* Employee Corner (~35%) */}
-            <div className="w-full lg:w-[35%]">
-              <ParcEmployeeCorner />
             </div>
           </div>
         </div>

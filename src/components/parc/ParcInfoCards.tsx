@@ -1,4 +1,4 @@
-import { Download, Calendar, BellOff } from "lucide-react";
+import { Download, Calendar } from "lucide-react";
 
 interface InfoCardItem {
   title: string;
@@ -110,7 +110,7 @@ export function ParcInfoCards() {
   return (
     <section className="bg-white pb-10 sm:pb-14">
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2">
           <InfoCard
             title="Downloads"
             badgeColor="bg-[#104591]"
@@ -122,17 +122,6 @@ export function ParcInfoCards() {
             badgeColor="bg-[#f0ad4e]"
             viewAllHref="/tenders"
             items={tenders}
-          />
-          <InfoCard
-            title="Latest Jobs"
-            badgeColor="bg-[#d9534f]"
-            viewAllHref="/careers"
-            items={[]}
-            emptyState={{
-              icon: BellOff,
-              heading: "No Jobs",
-              message: "Currently there are no Job Opening in organization",
-            }}
           />
         </div>
       </div>
