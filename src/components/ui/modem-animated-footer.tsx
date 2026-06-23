@@ -74,28 +74,16 @@ export function Footer({
               )}
 
               {navLinks.length > 0 && (
-                <div className="flex flex-wrap justify-center gap-4 text-sm font-medium text-muted-foreground max-w-full px-4">
-                  {navLinks.map((link, index) =>
-                    link.external ? (
-                      <a
-                        key={index}
-                        href={link.href}
-                        className="hover:text-foreground duration-300 hover:font-semibold"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {link.label}
-                      </a>
-                    ) : (
-                      <Link
-                        key={index}
-                        to={link.href as "/"}
-                        className="hover:text-foreground duration-300 hover:font-semibold"
-                      >
-                        {link.label}
-                      </Link>
-                    ),
-                  )}
+                <div className="flex flex-wrap justify-center gap-x-3 gap-y-1.5 text-xs font-medium text-muted-foreground max-w-full px-4 sm:gap-x-4 sm:text-sm lg:gap-x-6">
+                  {navLinks.map((link, index) => (
+                    <Link
+                      key={index}
+                      to={link.href as "/"}
+                      className="hover:text-foreground duration-300 hover:font-semibold whitespace-nowrap"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
                 </div>
               )}
             </div>
@@ -120,8 +108,8 @@ export function Footer({
 
         {/* Large background text */}
         <div
-          className="bg-gradient-to-b from-foreground/20 via-foreground/10 to-transparent bg-clip-text text-transparent leading-none absolute left-1/2 -translate-x-1/2 bottom-28 md:bottom-20 font-extrabold tracking-tighter pointer-events-none select-none text-center px-4"
-          style={{ fontSize: "clamp(3rem, 12vw, 10rem)", maxWidth: "95vw" }}
+          className="bg-gradient-to-b from-foreground/15 via-foreground/8 to-transparent bg-clip-text text-transparent leading-none absolute left-1/2 -translate-x-1/2 bottom-28 md:bottom-20 font-extrabold tracking-tighter pointer-events-none select-none text-center px-4"
+          style={{ fontSize: "clamp(2rem, 7vw, 5rem)", maxWidth: "95vw" }}
         >
           {brandName.toUpperCase()}
         </div>

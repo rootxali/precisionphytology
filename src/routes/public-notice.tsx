@@ -11,14 +11,8 @@ function PublicNoticePage() {
         <h1 className="text-3xl font-bold text-[#104591] sm:text-4xl">Public Notice</h1>
         <div className="mt-2 h-1 w-20 bg-[#0E8B1A]" />
 
-        <div className="mt-8 grid gap-6 sm:grid-cols-3">
+        <div className="mt-8 grid gap-6 sm:grid-cols-2">
           {[
-            {
-              title: "Tenders",
-              desc: "Active tenders and procurement notices.",
-              href: "/public-notice/tenders",
-              color: "bg-[#f0ad4e]",
-            },
             {
               title: "Notifications",
               desc: "Official notifications and orders.",

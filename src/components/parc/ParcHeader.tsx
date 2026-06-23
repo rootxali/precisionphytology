@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, X, ChevronDown } from "lucide-react";
+import { NotificationBell } from "./NotificationBell";
 
 const navItems = [
   { label: "Home", href: "/", hasDropdown: false },
@@ -18,6 +19,7 @@ const navItems = [
       { label: "Organogram", href: "/about/organogram" },
     ],
   },
+  { label: "Services", href: "/services", hasDropdown: false },
   {
     label: "Divisions",
     href: "/research",
@@ -32,7 +34,7 @@ const navItems = [
     ],
   },
   {
-    label: "Research Establishments",
+    label: "Establishments",
     href: "/establishments",
     hasDropdown: true,
     children: [
@@ -54,74 +56,66 @@ const navItems = [
     ],
   },
   {
-    label: "Careers",
-    href: "/careers",
-    hasDropdown: true,
-    children: [
-      { label: "Current Openings", href: "/careers" },
-      { label: "How to Apply", href: "/careers/apply" },
-    ],
+    label: "Blog",
+    href: "/blog",
+    hasDropdown: false,
   },
   {
     label: "Public Notice",
     href: "/public-notice",
     hasDropdown: true,
     children: [
-      { label: "Tenders", href: "/tenders" },
-      { label: "Notifications", href: "/notifications" },
-      { label: "Circulars", href: "/circulars" },
+      { label: "Notifications", href: "/public-notice/notifications" },
+      { label: "Circulars", href: "/public-notice/circulars" },
     ],
   },
+  { label: "Info", href: "/information", hasDropdown: false },
   {
-    label: "Employees Corner",
-    href: "/employees",
-    hasDropdown: true,
-    children: [
-      { label: "Webmail", href: "/employees/webmail" },
-      { label: "Leave Portal", href: "/employees/leave" },
-      { label: "Payslips", href: "/employees/payslips" },
-    ],
-  },
-  { label: "Information", href: "/information", hasDropdown: false },
-  {
-    label: "Contact Us",
+    label: "Contact",
     href: "/contact",
-    hasDropdown: true,
-    children: [
-      { label: "Head Office", href: "/contact" },
-      { label: "Regional Centers", href: "/contact/regional" },
-    ],
+    hasDropdown: false,
   },
 ];
 
 export function ParcHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [mobileAccordion, setMobileAccordion] = useState<string | null>(null);
 
   return (
     <header className="sticky top-0 z-50">
       {/* Logo Bar — white background */}
       <div className="border-b border-gray-200 bg-white">
-        <div className="mx-auto flex max-w-[1200px] items-center justify-between px-4 py-3 sm:px-6">
-          <Link to="/" className="flex items-center gap-3">
-            <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#0E8B1A] text-white">
-              <svg className="h-8 w-8" viewBox="0 0 24 24" fill="currentColor">
+        <div className="mx-auto flex max-w-[1400px] items-center justify-between px-3 py-2.5 sm:px-4 lg:px-6">
+          <Link to="/" className="flex items-center gap-2 sm:gap-3">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#0E8B1A] text-white sm:h-12 sm:w-12 lg:h-14 lg:w-14">
+              <svg className="h-5 w-5 sm:h-6 sm:w-6 lg:h-8 lg:w-8" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
               </svg>
             </div>
-            <div>
-              <p className="text-base font-bold leading-tight text-[#1a1a1a]">
+            <div className="hidden min-w-0 sm:block">
+              <p className="text-sm font-bold leading-tight text-[#1a1a1a] lg:text-base">
                 Precision Phytology Organization
               </p>
-              <p className="text-[10px] text-gray-500">PPO</p>
+              <p className="text-[9px] text-gray-500 lg:text-[10px]">PPO</p>
+            </div>
+            <div className="sm:hidden">
+              <p className="text-sm font-bold leading-tight text-[#1a1a1a]">
+                PPO
+              </p>
             </div>
           </Link>
+
+          {/* Right side — notification bell */}
+          <div className="flex items-center">
+            <NotificationBell />
+          </div>
         </div>
       </div>
 
       {/* Navigation Bar — solid green */}
       <nav className="bg-[#0E8B1A]">
-        <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
+        <div className="mx-auto max-w-[1400px] px-3 sm:px-4 lg:px-6">
           {/* Desktop Nav */}
           <div className="hidden items-center lg:flex">
             {navItems.map((item) => (
@@ -133,7 +127,7 @@ export function ParcHeader() {
               >
                 <Link
                   to={item.href}
-                  className="flex items-center gap-1 px-[18px] py-2.5 text-[13px] font-medium text-white transition-colors hover:bg-white/15"
+                  className="flex items-center gap-1 px-3 py-2.5 text-[12px] font-medium text-white transition-colors hover:bg-white/15 xl:text-[13px]"
                 >
                   {item.label}
                   {item.hasDropdown && <ChevronDown className="h-3 w-3 opacity-70" />}
@@ -153,11 +147,17 @@ export function ParcHeader() {
                 )}
               </div>
             ))}
+            <Link
+              to="/pricing"
+              className="ml-auto rounded bg-white px-4 py-2 text-[12px] font-bold text-[#0E8B1A] transition-colors hover:bg-white/90 xl:text-[13px]"
+            >
+              Get Membership
+            </Link>
           </div>
 
           {/* Mobile Toggle */}
-          <div className="flex items-center justify-between py-2.5 lg:hidden">
-            <span className="text-sm font-medium text-white">Menu</span>
+          <div className="flex items-center justify-between py-2 lg:hidden">
+            <span className="text-xs font-medium text-white sm:text-sm">Menu</span>
             <button onClick={() => setMobileOpen(!mobileOpen)} className="text-white">
               {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
@@ -166,32 +166,64 @@ export function ParcHeader() {
 
         {/* Mobile Nav */}
         {mobileOpen && (
-          <div className="border-t border-white/20 bg-[#0E8B1A] px-4 pb-4 lg:hidden">
+          <div className="border-t border-white/20 bg-[#0E8B1A] px-3 pb-4 lg:hidden">
             {navItems.map((item) => (
               <div key={item.label}>
-                <Link
-                  to={item.href}
-                  className="block border-b border-white/10 py-2.5 text-sm text-white"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  {item.label}
-                </Link>
-                {item.children && (
-                  <div className="pl-4">
-                    {item.children.map((child) => (
-                      <Link
-                        key={child.label}
-                        to={child.href}
-                        className="block border-b border-white/5 py-2 text-xs text-white/70"
-                        onClick={() => setMobileOpen(false)}
-                      >
-                        {child.label}
-                      </Link>
-                    ))}
-                  </div>
+                {item.hasDropdown ? (
+                  <>
+                    <button
+                      onClick={() =>
+                        setMobileAccordion(mobileAccordion === item.label ? null : item.label)
+                      }
+                      className="flex w-full items-center justify-between border-b border-white/10 py-2.5 text-sm text-white"
+                    >
+                      {item.label}
+                      <ChevronDown
+                        className={`h-4 w-4 transition-transform ${
+                          mobileAccordion === item.label ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+                    {mobileAccordion === item.label && (
+                      <div className="pl-4">
+                        <Link
+                          to={item.href}
+                          className="block border-b border-white/5 py-2 text-xs font-medium text-white/90"
+                          onClick={() => setMobileOpen(false)}
+                        >
+                          Overview
+                        </Link>
+                        {item.children?.map((child) => (
+                          <Link
+                            key={child.label}
+                            to={child.href}
+                            className="block border-b border-white/5 py-2 text-xs text-white/70"
+                            onClick={() => setMobileOpen(false)}
+                          >
+                            {child.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </>
+                ) : (
+                  <Link
+                    to={item.href}
+                    className="block border-b border-white/10 py-2.5 text-sm text-white"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
                 )}
               </div>
             ))}
+            <Link
+              to="/pricing"
+              className="mt-3 block rounded bg-white px-4 py-2.5 text-center text-sm font-bold text-[#0E8B1A]"
+              onClick={() => setMobileOpen(false)}
+            >
+              Get Membership
+            </Link>
           </div>
         )}
       </nav>

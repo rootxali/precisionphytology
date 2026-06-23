@@ -1,8 +1,23 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Users, FlaskConical, BookOpen, Award } from "lucide-react";
 
 export const Route = createFileRoute("/research/engineering")({
   component: EngineeringPage,
 });
+
+const projects = [
+  "Precision Agriculture Technology Development",
+  "Post-Harvest Loss Reduction Technologies",
+  "Solar-Powered Irrigation Systems",
+  "Farm Mechanization for Smallholders",
+];
+
+const publications = [
+  "Energy audit of greenhouse tomato production in Pakistan",
+  "Performance evaluation of zero-till wheat seeders",
+  "Design optimization of solar-powered drip irrigation",
+  "Post-harvest losses in mango supply chain analysis",
+];
 
 function EngineeringPage() {
   return (
@@ -12,17 +27,67 @@ function EngineeringPage() {
           Agricultural Engineering Division
         </h1>
         <div className="mt-2 h-1 w-20 bg-[#0E8B1A]" />
-        <div className="mt-8 space-y-4 text-sm leading-relaxed text-[#65676b]">
-          <p>
-            The Agricultural Engineering Division conducts research in farm mechanization,
-            irrigation engineering, post-harvest technology, and renewable energy applications in
-            agriculture.
-          </p>
-          <p>
-            Key research areas include development of appropriate farm machinery, precision
-            agriculture technologies, solar-powered irrigation systems, and post-harvest processing
-            and storage solutions.
-          </p>
+
+        <div className="mt-8 grid gap-8 lg:grid-cols-3">
+          <div className="lg:col-span-2 space-y-6">
+            <div className="space-y-4 text-sm leading-relaxed text-[#65676b]">
+              <p>
+                The Agricultural Engineering Division develops and adapts farm machinery,
+                irrigation technologies, and post-harvest solutions for Pakistani agriculture.
+                Our work focuses on improving farm efficiency, reducing energy consumption,
+                and minimizing post-harvest losses.
+              </p>
+              <p>
+                The division designs and tests farm equipment suited to local conditions,
+                develops precision agriculture tools, and promotes renewable energy solutions
+                for farming operations. It also conducts research on food processing and
+                storage technologies.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="flex items-center gap-2 text-lg font-bold text-[#212529]">
+                <FlaskConical className="h-5 w-5 text-[#0E8B1A]" /> Active Research Projects
+              </h3>
+              <div className="mt-3 space-y-2">
+                {projects.map((p) => (
+                  <div key={p} className="rounded-lg border border-[#e9e9e9] bg-[#f7f8fa] px-4 py-3 text-sm text-[#65676b]">
+                    {p}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h3 className="flex items-center gap-2 text-lg font-bold text-[#212529]">
+                <BookOpen className="h-5 w-5 text-[#104591]" /> Recent Publications
+              </h3>
+              <div className="mt-3 space-y-2">
+                {publications.map((p) => (
+                  <div key={p} className="rounded-lg border border-[#e9e9e9] bg-white px-4 py-3 text-sm text-[#65676b] italic">
+                    "{p}"
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <div className="rounded-lg border border-[#e9e9e9] bg-[#f7f8fa] p-5">
+              <h3 className="text-sm font-bold text-[#212529]">Division Highlights</h3>
+              <div className="mt-3 space-y-3 text-xs text-[#65676b]">
+                <p className="flex items-center gap-2"><Users className="h-3.5 w-3.5 text-[#0E8B1A]" /> 30 Researchers</p>
+                <p className="flex items-center gap-2"><FlaskConical className="h-3.5 w-3.5 text-[#0E8B1A]" /> 5 Active Projects</p>
+                <p className="flex items-center gap-2"><BookOpen className="h-3.5 w-3.5 text-[#104591]" /> 80+ Publications</p>
+                <p className="flex items-center gap-2"><Award className="h-3.5 w-3.5 text-[#f0ad4e]" /> 12 Awards</p>
+              </div>
+            </div>
+            <div className="rounded-lg border border-[#e9e9e9] bg-[#f7f8fa] p-5">
+              <h3 className="text-sm font-bold text-[#212529]">Head of Division</h3>
+              <p className="mt-2 text-sm font-medium text-[#212529]">Engr. Muhammad Ashraf</p>
+              <p className="text-xs text-[#65676b]">ME Agricultural Engineering, UET Faisalabad</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

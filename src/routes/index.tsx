@@ -32,16 +32,16 @@ function Index() {
   return (
     <div>
       {/* Hero Content Row — 3 columns */}
-      <section className="bg-white py-4">
-        <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
-          <div className="flex flex-col gap-4 lg:flex-row">
+      <section className="bg-white py-3 sm:py-4">
+        <div className="mx-auto max-w-[1200px] px-3 sm:px-4 lg:px-6">
+          <div className="flex flex-col gap-3 sm:gap-4 lg:flex-row">
             {/* LEFT — Main Image Slider (~65%) */}
             <div className="flex-1 lg:w-[65%]">
               <ParcHeroSlider />
             </div>
 
             {/* RIGHT COLUMN (~35%) */}
-            <div className="flex w-full flex-col gap-3 lg:w-[35%]">
+            <div className="flex w-full flex-col gap-2.5 sm:gap-3 lg:w-[35%]">
               {/* Quick Program Links Grid */}
               <ParcProgramGrid />
 
@@ -52,11 +52,10 @@ function Index() {
         </div>
       </section>
 
-      {/* Below Hero — Latest News + Employee Corner */}
-      <section className="bg-white pb-6">
-        <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
-          <div className="flex flex-col gap-4 lg:flex-row">
-            {/* Latest News Panel (full width) */}
+      {/* Below Hero — Latest News */}
+      <section className="bg-white pb-4 sm:pb-6">
+        <div className="mx-auto max-w-[1200px] px-3 sm:px-4 lg:px-6">
+          <div className="flex flex-col gap-3 sm:gap-4 lg:flex-row">
             <div className="w-full">
               <ParcLatestNewsPanel />
             </div>
@@ -67,7 +66,7 @@ function Index() {
       {/* Featured News + Stats Panel */}
       <ParcFeaturedNews />
 
-      {/* Three-Column Info Cards */}
+      {/* Info Cards */}
       <ParcInfoCards />
     </div>
   );

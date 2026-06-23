@@ -260,14 +260,28 @@
   background: rgba(255, 255, 255, 0.55);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  width: 48px;
-  height: 48px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   transition:
     background 0.2s,
     box-shadow 0.2s;
+}
+@media (min-width: 640px) {
+  .parc-hero-swiper .swiper-button-next,
+  .parc-hero-swiper .swiper-button-prev {
+    width: 42px;
+    height: 42px;
+  }
+}
+@media (min-width: 1024px) {
+  .parc-hero-swiper .swiper-button-next,
+  .parc-hero-swiper .swiper-button-prev {
+    width: 48px;
+    height: 48px;
+  }
 }
 .parc-hero-swiper .swiper-button-next:hover,
 .parc-hero-swiper .swiper-button-prev:hover {
@@ -276,8 +290,14 @@
 }
 .parc-hero-swiper .swiper-button-next::after,
 .parc-hero-swiper .swiper-button-prev::after {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bold;
+}
+@media (min-width: 1024px) {
+  .parc-hero-swiper .swiper-button-next::after,
+  .parc-hero-swiper .swiper-button-prev::after {
+    font-size: 20px;
+  }
 }
 
 /* Leadership peek carousel arrows */
@@ -319,5 +339,103 @@
   .parc-ticker,
   .parc-news-ticker {
     animation: none;
+  }
+}
+
+/* Fan Carousel */
+.fan-layout {
+  min-height: 380px;
+}
+
+.fan-card {
+  width: 18rem;
+  height: 28rem;
+  border-radius: 1rem;
+  position: absolute;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (min-width: 768px) {
+  .fan-layout {
+    min-height: 450px;
+  }
+  .fan-card {
+    width: 20rem;
+    height: 32rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .fan-layout {
+    min-height: 520px;
+  }
+  .fan-card {
+    width: 22rem;
+    height: 36rem;
+  }
+}
+
+/* ===== FLUID RESPONSIVE UTILITIES ===== */
+
+/* Fluid container — scales from 320px to 1400px */
+.fluid-container {
+  width: 100%;
+  max-width: min(1200px, 100% - 2rem);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+@media (min-width: 640px) {
+  .fluid-container {
+    max-width: min(1200px, 100% - 3rem);
+    padding-inline: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .fluid-container {
+    max-width: min(1400px, 100% - 4rem);
+    padding-inline: 2rem;
+  }
+}
+
+/* Fluid typography scale */
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1920px) {
+  html {
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 2560px) {
+  html {
+    font-size: 19px;
+  }
+}
+
+/* Ensure images never overflow */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Touch-friendly tap targets on mobile */
+@media (max-width: 768px) {
+  button, a, [role="button"] {
+    min-height: 44px;
   }
 }

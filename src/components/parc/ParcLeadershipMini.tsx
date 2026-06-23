@@ -56,7 +56,7 @@ export function ParcLeadershipMini() {
   const swiperRef = useRef<SwiperType | null>(null);
 
   return (
-    <div className="relative mt-3">
+    <div className="relative mt-2 sm:mt-3">
       <Swiper
         modules={[Navigation]}
         navigation={{
@@ -64,26 +64,26 @@ export function ParcLeadershipMini() {
           prevEl: ".parc-leadership-prev",
         }}
         onSwiper={(swiper) => (swiperRef.current = swiper)}
-        spaceBetween={12}
-        slidesPerView={1.3}
+        spaceBetween={8}
+        slidesPerView={1.5}
         centeredSlides={false}
       >
         {team.map((member, index) => (
           <SwiperSlide key={index}>
-            <div className="flex flex-col items-center rounded-lg border border-gray-200 bg-white p-3 text-center shadow-sm">
+            <div className="flex flex-col items-center rounded-lg border border-gray-200 bg-white p-2.5 text-center shadow-sm sm:p-3">
               <img
                 src={member.image}
                 alt={member.name}
-                className="mb-2 h-16 w-16 rounded-full object-cover ring-2 ring-[#104591]/20"
+                className="mb-1.5 h-12 w-12 rounded-full object-cover ring-2 ring-[#104591]/20 sm:mb-2 sm:h-16 sm:w-16"
               />
-              <p className="text-xs font-bold text-[#1a1a1a]">{member.name}</p>
-              <p className="mt-0.5 text-[10px] font-medium leading-tight text-[#104591]">
+              <p className="text-[10px] font-bold text-[#1a1a1a] sm:text-xs">{member.name}</p>
+              <p className="mt-0.5 text-[9px] font-medium leading-tight text-[#104591] sm:text-[10px]">
                 {member.title}
               </p>
-              <p className="mt-0.5 text-[9px] text-gray-500">{member.division}</p>
+              <p className="mt-0.5 text-[8px] text-gray-500 sm:text-[9px]">{member.division}</p>
               <a
                 href="#"
-                className="mt-2 rounded border border-gray-300 px-3 py-1 text-[10px] font-medium text-[#1a1a1a] transition-colors hover:bg-gray-50"
+                className="mt-1.5 rounded border border-gray-300 px-2.5 py-0.5 text-[9px] font-medium text-[#1a1a1a] transition-colors hover:bg-gray-50 sm:mt-2 sm:px-3 sm:py-1 sm:text-[10px]"
               >
                 Read More
               </a>
@@ -93,13 +93,13 @@ export function ParcLeadershipMini() {
       </Swiper>
 
       {/* Navigation arrows */}
-      <button className="parc-leadership-prev absolute -left-3 top-1/2 z-10 grid h-8 w-8 -translate-y-1/2 place-items-center rounded-full bg-[#104591] text-white shadow-md transition-colors hover:bg-[#104591]/90">
-        <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <button className="parc-leadership-prev absolute -left-2 top-1/2 z-10 grid h-6 w-6 -translate-y-1/2 place-items-center rounded-full bg-[#104591] text-white shadow-md transition-colors hover:bg-[#104591]/90 sm:-left-3 sm:h-8 sm:w-8">
+        <svg className="h-3 w-3 sm:h-4 sm:w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
         </svg>
       </button>
-      <button className="parc-leadership-next absolute -right-3 top-1/2 z-10 grid h-8 w-8 -translate-y-1/2 place-items-center rounded-full bg-[#104591] text-white shadow-md transition-colors hover:bg-[#104591]/90">
-        <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <button className="parc-leadership-next absolute -right-2 top-1/2 z-10 grid h-6 w-6 -translate-y-1/2 place-items-center rounded-full bg-[#104591] text-white shadow-md transition-colors hover:bg-[#104591]/90 sm:-right-3 sm:h-8 sm:w-8">
+        <svg className="h-3 w-3 sm:h-4 sm:w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
         </svg>
       </button>

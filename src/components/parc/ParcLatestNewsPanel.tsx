@@ -54,32 +54,32 @@ export function ParcLatestNewsPanel() {
     <div className="flex flex-col overflow-hidden rounded border border-gray-200 bg-white shadow-sm">
       {/* Header */}
       <div className="flex items-center">
-        <div className="flex items-center gap-2 bg-[#C7474C] px-4 py-2.5">
-          <span className="text-sm font-bold text-white">Latest News</span>
+        <div className="flex items-center gap-2 bg-[#C7474C] px-3 py-2 sm:px-4 sm:py-2.5">
+          <span className="text-xs font-bold text-white sm:text-sm">Latest News</span>
         </div>
         <div className="parc-dotted-bg flex-1 py-2.5" />
         <a
           href="#"
-          className="bg-[#D9534F] px-4 py-2.5 text-xs font-bold text-white transition-colors hover:bg-[#D9534F]/90"
+          className="bg-[#D9534F] px-3 py-2 text-[10px] font-bold text-white transition-colors hover:bg-[#D9534F]/90 sm:px-4 sm:py-2.5 sm:text-xs"
         >
           VIEW ALL
         </a>
       </div>
 
       {/* Scrollable news list */}
-      <div className="parc-scroll-box max-h-[400px] overflow-y-auto">
+      <div className="parc-scroll-box max-h-[300px] overflow-y-auto sm:max-h-[400px]">
         {newsItems.map((item, index) => (
           <div
             key={index}
-            className="flex gap-3 border-b border-gray-100 px-4 py-3 transition-colors hover:bg-gray-50"
+            className="flex gap-2.5 border-b border-gray-100 px-3 py-2.5 transition-colors hover:bg-gray-50 sm:gap-3 sm:px-4 sm:py-3"
           >
             <img
               src={item.image}
               alt={item.title}
-              className="h-[70px] w-[70px] shrink-0 rounded object-cover"
+              className="h-12 w-12 shrink-0 rounded object-cover sm:h-[70px] sm:w-[70px]"
             />
             <div className="min-w-0 flex-1">
-              <p className="mb-1 text-xs text-[#c0392b]">
+              <p className="mb-0.5 text-[10px] text-[#c0392b] sm:mb-1 sm:text-xs">
                 <span className="mr-1 inline-block h-3 w-3 align-middle">
                   <svg viewBox="0 0 24 24" fill="currentColor" className="h-3 w-3">
                     <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z" />
@@ -89,7 +89,7 @@ export function ParcLatestNewsPanel() {
               </p>
               <a
                 href="#"
-                className="line-clamp-2 text-sm font-semibold leading-snug text-[#1a1a1a] hover:text-[#C7474C]"
+                className="line-clamp-2 text-xs font-semibold leading-snug text-[#1a1a1a] hover:text-[#C7474C] sm:text-sm"
               >
                 {item.title}
               </a>

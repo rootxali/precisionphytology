@@ -98,30 +98,16 @@ const downloads: InfoCardItem[] = [
   { title: "Seed Request Form", metaIcon: "download" },
 ];
 
-const tenders: InfoCardItem[] = [
-  {
-    title: "PPO INVITATION TO BID",
-    meta: "Closing Date: June 19, 2026",
-    metaIcon: "calendar",
-  },
-];
-
 export function ParcInfoCards() {
   return (
-    <section className="bg-white pb-10 sm:pb-14">
-      <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
-        <div className="grid gap-6 md:grid-cols-2">
+    <section className="bg-white pb-8 sm:pb-10 lg:pb-14">
+      <div className="mx-auto max-w-[1200px] px-3 sm:px-4 lg:px-6">
+        <div className="grid gap-4 sm:gap-6 md:grid-cols-2">
           <InfoCard
             title="Downloads"
             badgeColor="bg-[#104591]"
             viewAllHref="/downloads"
             items={downloads}
-          />
-          <InfoCard
-            title="Tenders"
-            badgeColor="bg-[#f0ad4e]"
-            viewAllHref="/tenders"
-            items={tenders}
           />
         </div>
       </div>
