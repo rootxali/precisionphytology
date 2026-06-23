@@ -185,6 +185,7 @@ function RootComponent() {
           brandDescription="Apex national agricultural research organization coordinating research, diagnostics, and advisory services across Pakistan."
           socialLinks={socialLinks}
           navLinks={navLinks}
+          brandIcon={<img src="/logo.png" alt="PPO Logo" className="w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14 object-cover rounded-xl" />}
         />
       </div>
       <ParcScrollToTop />

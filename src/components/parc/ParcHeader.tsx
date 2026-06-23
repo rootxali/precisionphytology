@@ -88,10 +88,8 @@ export function ParcHeader() {
       <div className="border-b border-gray-200 bg-white">
         <div className="mx-auto flex max-w-[1400px] items-center justify-between px-3 py-2.5 sm:px-4 lg:px-6">
           <Link to="/" className="flex items-center gap-2 sm:gap-3">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#0E8B1A] text-white sm:h-12 sm:w-12 lg:h-14 lg:w-14">
-              <svg className="h-5 w-5 sm:h-6 sm:w-6 lg:h-8 lg:w-8" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-              </svg>
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-full sm:h-12 sm:w-12 lg:h-14 lg:w-14">
+              <img src="/logo.png" alt="PPO Logo" className="h-full w-full object-cover" />
             </div>
             <div className="hidden min-w-0 sm:block">
               <p className="text-sm font-bold leading-tight text-[#1a1a1a] lg:text-base">
